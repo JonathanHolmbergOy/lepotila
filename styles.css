@@ -1,0 +1,143 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  overflow-x: hidden;
+  height: 100dvh;
+  max-height: 100dvh;
+  max-width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1vh 1vw;
+  margin-inline: auto;
+  background-image: url(./bg.svg);
+  -webkit-font-smoothing: antialiased;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#logo {
+  display: block;
+  max-width: 100%;
+  aspect-ratio: 1 / 1;
+  max-height: 70vh;
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+  gap: 5.5em;
+}
+
+@media (max-width: 640px) {
+  nav {
+    flex-direction: column;
+    gap: 2.1em;
+  }
+}
+
+nav a {
+  position: relative;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  background-color: blueviolet;
+  padding: 0.8em 1.3em;
+  color: white;
+  opacity: 0.9;
+  font-weight: 600;
+  border-radius: 21px;
+  transition: background-color 0.3s ease, opacity 0.3s ease;
+  text-align: center;
+  overflow: hidden;
+  border: 1px solid #7427BE;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  inset: 3px;
+  background: linear-gradient(to right, #be95be 0%, #be95be 60%, transparent 100%);
+  border-radius: 18px;
+  mix-blend-mode: overlay;
+  pointer-events: none;
+  opacity: 0.4;
+}
+
+nav a:hover {
+  opacity: 1;
+}
+
+nav a:focus-visible {
+  outline: 2px solid white;
+  outline-offset: 2px;
+}
+
+nav a:active {
+  background-color: black;
+  border-color: #17191e;
+}
+
+footer {
+  font-size: 0.8em;
+  display: grid;
+  grid-template-columns: auto auto;
+  align-items: center;
+  justify-content: center;
+  padding: 0.3em 0.8em;
+  gap: 1.3em;
+  color: #17191e;
+}
+
+footer > * {
+  padding-inline: 5.5em;
+}
+
+footer address {
+  text-align: right;
+  font-style: normal;
+}
+
+footer address a {
+  color: inherit;
+}
+
+footer address a:hover {
+  color: black;
+}
+
+a {
+  text-decoration: none;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+    animation: none !important;
+  }
+}
