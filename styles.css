@@ -61,7 +61,6 @@ nav a {
   transition: background-color 0.3s ease, opacity 0.3s ease;
   text-align: center;
   overflow: hidden;
-  border: 1px solid #7427BE;
 }
 
 nav a::after {
@@ -72,7 +71,8 @@ nav a::after {
   border-radius: 18px;
   mix-blend-mode: overlay;
   pointer-events: none;
-  opacity: 0.4;
+  opacity: 0.55;
+  filter: blur(5px);
 }
 
 nav a:hover {
@@ -80,7 +80,7 @@ nav a:hover {
 }
 
 nav a:focus-visible {
-  outline: 2px solid white;
+  outline: 2px solid black;
   outline-offset: 2px;
 }
 
@@ -111,10 +111,11 @@ footer address {
 
 footer address a {
   color: inherit;
+  font-weight: 800;
 }
 
 footer address a:hover {
-  color: black;
+  color: blueviolet;
 }
 
 a {
